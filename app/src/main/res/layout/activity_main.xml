@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#F5F5F5">
+
+    <!-- Üstteki çiftlik görseli -->
+    <ImageView
+        android:id="@+id/imageBanner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/farm_banner" />
+
+    <!-- Tarlalar Butonu -->
+    <Button
+        android:id="@+id/btnTarlalar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageBanner"
+        android:layout_margin="16dp"
+        android:text="🌾 Tarlalar"
+        android:textSize="18sp"
+        android:backgroundTint="#A5D6A7"
+        android:textColor="#000000" />
+
+    <!-- Depolama Butonu -->
+    <Button
+        android:id="@+id/btnDepolama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnTarlalar"
+        android:layout_margin="16dp"
+        android:text="🏠 Depolama"
+        android:textSize="18sp"
+        android:backgroundTint="#FFF59D"
+        android:textColor="#000000" />
+
+    <!-- Ekonomi Butonu -->
+    <Button
+        android:id="@+id/btnEkonomi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDepolama"
+        android:layout_margin="16dp"
+        android:text="💰 Ekonomi"
+        android:textSize="18sp"
+        android:backgroundTint="#FFCC80"
+        android:textColor="#000000" />
+
+    <!-- Hayvanlar Butonu -->
+    <Button
+        android:id="@+id/btnHayvanlar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnEkonomi"
+        android:layout_margin="16dp"
+        android:text="🐄 Hayvanlar"
+        android:textSize="18sp"
+        android:backgroundTint="#BCAAA4"
+        android:textColor="#000000" />
+
+    <!-- Araçlar Butonu -->
+    <Button
+        android:id="@+id/btnAraclar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnHayvanlar"
+        android:layout_margin="16dp"
+        android:text="🚜 Araçlar"
+        android:textSize="18sp"
+        android:backgroundTint="#90CAF9"
+        android:textColor="#000000" />
+
+    <!-- Bilgilerim Butonu (sağ alt köşe) -->
+    <ImageButton
+        android:id="@+id/btnBilgilerim"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_user"
+        android:background="@drawable/round_button_bg"
+        android:contentDescription="Bilgilerim"
+        android:elevation="6dp" />
+
+</RelativeLayout>

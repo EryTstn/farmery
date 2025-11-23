@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4C3"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/edtIsim"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tarla Adı"
+            android:textColorHint="#33691E"
+            android:textColor="#33691E"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/edtAlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tarla Alanı (m²)"
+            android:inputType="numberDecimal"
+            android:textColorHint="#33691E"
+            android:textColor="#33691E"
+            android:layout_marginBottom="12dp" />
+
+        <Spinner
+            android:id="@+id/spinnerUrun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/edtEkimTarihi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ekim Tarihi (gg.aa.yyyy)"
+            android:textColorHint="#33691E"
+            android:textColor="#33691E"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/edtHasatTarihi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hasat Tarihi (gg.aa.yyyy)"
+            android:textColorHint="#33691E"
+            android:textColor="#33691E"
+            android:layout_marginBottom="12dp" />
+
+        <EditText
+            android:id="@+id/edtMiktar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ürün Miktarı (ton)"
+            android:inputType="numberDecimal"
+            android:textColorHint="#33691E"
+            android:textColor="#33691E"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnGuncelle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Güncelle"
+            android:backgroundTint="#81C784"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnGeriDon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Geri Dön"
+            android:backgroundTint="#FFB74D"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+</ScrollView>

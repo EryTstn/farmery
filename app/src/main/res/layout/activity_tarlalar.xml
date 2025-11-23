@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4C3"
+    tools:context=".TarlalarActivity">
+
+
+    <Button
+        android:id="@+id/btnTarlaEkle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tarla Ekle"
+        android:layout_margin="16dp"
+        android:backgroundTint="#A5D6A7"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnTarlalarim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tarlalarım"
+        android:layout_below="@id/btnTarlaEkle"
+        android:layout_margin="16dp"
+        android:backgroundTint="#FFD54F"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnAnasayfa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnTarlalarim"
+        android:layout_margin="16dp"
+        android:layout_marginTop="187dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFB74D"
+        android:text="Anasayfa"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+</RelativeLayout>

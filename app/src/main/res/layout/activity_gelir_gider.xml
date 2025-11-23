@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F4C3"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Gelir Bölümü -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_marginTop="8dp"
+            android:text="Gelir Ekle"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerGelir"
+            android:layout_width="match_parent"
+            android:layout_height="53dp" />
+
+        <EditText
+            android:id="@+id/editGelirMiktar"
+            android:layout_width="match_parent"
+            android:layout_height="77dp"
+            android:hint="Gelir miktarı (TL)"
+            android:inputType="numberDecimal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnGelirEkle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ekle" />
+
+            <Button
+                android:id="@+id/btnGelirCikar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Çıkar" />
+
+        </LinearLayout>
+
+        <!-- Gider Bölümü -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:layout_marginTop="16dp"
+            android:text="Gider Ekle"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:id="@+id/spinnerGider"
+            android:layout_width="match_parent"
+            android:layout_height="68dp" />
+
+        <EditText
+            android:id="@+id/editGiderMiktar"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:hint="Gider miktarı (TL)"
+            android:inputType="numberDecimal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnGiderEkle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ekle" />
+
+            <Button
+                android:id="@+id/btnGiderCikar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Çıkar" />
+
+        </LinearLayout>
+        <!-- Seçili Gelir Tutarı -->
+        <TextView
+            android:id="@+id/txtSeciliGelir"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seçili Gelir: 0 TL"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:layout_marginTop="4dp" />
+
+        <!-- Seçili Gider Tutarı -->
+        <TextView
+            android:id="@+id/txtSeciliGider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Seçili Gider: 0 TL"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:layout_marginTop="4dp" />
+
+
+        <!-- Sonuçlar -->
+        <TextView
+            android:id="@+id/txtToplamGelir"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:layout_marginTop="16dp"
+            android:text="Toplam Gelir: 0 TL"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtToplamGider"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:text="Toplam Gider: 0 TL"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtKarZarar"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:text="Kâr/Zarar: 0 TL"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnGeriDon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Geri Dön"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#81C784"
+            android:textColor="#FFFFFF"/>
+
+
+    </LinearLayout>
+</ScrollView>

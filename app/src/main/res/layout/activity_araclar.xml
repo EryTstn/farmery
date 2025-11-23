@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F1E9">
+
+    <LinearLayout
+        android:id="@+id/layoutRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Araç 1 -->
+        <LinearLayout
+            android:id="@+id/arac1Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="100dp"
+                android:contentDescription="Araç Görseli"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fendt" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fendt 1050"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yıl: 2021"
+                    android:textSize="16sp"
+                    android:textColor="#555" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fiyat: 12.550.000 TL"
+                    android:textSize="16sp"
+                    android:textColor="#555" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sat"
+                android:backgroundTint="#FF5722"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Araç 2 -->
+        <LinearLayout
+            android:id="@+id/arac2Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#FFFFFF"
+            android:padding="10dp"
+            android:layout_marginBottom="12dp"
+            android:elevation="2dp">
+
+            <ImageView
+                android:layout_width="108dp"
+                android:layout_height="100dp"
+                android:contentDescription="Araç Görseli"
+                android:scaleType="centerCrop"
+                android:src="@drawable/massey" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Massey Ferguson 9S 425"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#333" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yıl: 2024"
+                    android:textSize="16sp"
+                    android:textColor="#555" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fiyat: 10.880.000 TL"
+                    android:textSize="16sp"
+                    android:textColor="#555" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sat"
+                android:backgroundTint="#FF5722"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Ekle Butonu -->
+        <Button
+            android:id="@+id/btnAracEkle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ekle"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
+
+        <!-- Ana Sayfa Butonu -->
+        <TextView
+            android:id="@+id/btnAnaSayfa"
+            android:layout_width="wrap_content"
+            android:layout_height="74dp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingTop="20dp"
+            android:text="Ana Sayfa"
+            android:textColor="#00796B"
+            android:textSize="18sp" />
+    </LinearLayout>
+</ScrollView>

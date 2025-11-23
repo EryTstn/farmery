@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Ciftci_Projesi_1</string>
+    <string-array name="urun_array">
+        <item>Arpa</item>
+        <item>Buğday</item>
+        <item>Çavdar</item>
+        <item>Yulaf</item>
+        <item>Mısır</item>
+        <item>Kanola</item>
+        <item>Pancar</item>
+        <item>Patates</item>
+        <item>Pirinç</item>
+    </string-array>
+
+</resources>
