@@ -1,91 +1,413 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="#F5F5F5">
+    android:background="#F5F7FA"
+    android:fillViewport="true">
 
-    <!-- Üstteki çiftlik görseli -->
-    <ImageView
-        android:id="@+id/imageBanner"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/farm_banner" />
-
-    <!-- Tarlalar Butonu -->
-    <Button
-        android:id="@+id/btnTarlalar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imageBanner"
-        android:layout_margin="16dp"
-        android:text="🌾 Tarlalar"
-        android:textSize="18sp"
-        android:backgroundTint="#A5D6A7"
-        android:textColor="#000000" />
+        android:orientation="vertical">
 
-    <!-- Depolama Butonu -->
-    <Button
-        android:id="@+id/btnDepolama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnTarlalar"
-        android:layout_margin="16dp"
-        android:text="🏠 Depolama"
-        android:textSize="18sp"
-        android:backgroundTint="#FFF59D"
-        android:textColor="#000000" />
+        <!-- Modern Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/gradient_header"
+            android:padding="24dp"
+            android:paddingTop="48dp">
 
-    <!-- Ekonomi Butonu -->
-    <Button
-        android:id="@+id/btnEkonomi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnDepolama"
-        android:layout_margin="16dp"
-        android:text="💰 Ekonomi"
-        android:textSize="18sp"
-        android:backgroundTint="#FFCC80"
-        android:textColor="#000000" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="🌾 Bereketli olsun"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold" />
 
-    <!-- Hayvanlar Butonu -->
-    <Button
-        android:id="@+id/btnHayvanlar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnEkonomi"
-        android:layout_margin="16dp"
-        android:text="🐄 Hayvanlar"
-        android:textSize="18sp"
-        android:backgroundTint="#BCAAA4"
-        android:textColor="#000000" />
+            <TextView
+                android:id="@+id/txtWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hoş Geldiniz, Çiftçi!"
+                android:textSize="16sp"
+                android:textColor="#E8F5E9" />
+        </LinearLayout>
 
-    <!-- Araçlar Butonu -->
-    <Button
-        android:id="@+id/btnAraclar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnHayvanlar"
-        android:layout_margin="16dp"
-        android:text="🚜 Araçlar"
-        android:textSize="18sp"
-        android:backgroundTint="#90CAF9"
-        android:textColor="#000000" />
+        <!-- Hızlı İstatistikler -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp">
 
-    <!-- Bilgilerim Butonu (sağ alt köşe) -->
-    <ImageButton
-        android:id="@+id/btnBilgilerim"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_user"
-        android:background="@drawable/round_button_bg"
-        android:contentDescription="Bilgilerim"
-        android:elevation="6dp" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#4CAF50">
 
-</RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtTarlaSayisi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tarla"
+                        android:textSize="12sp"
+                        android:textColor="#E8F5E9" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                android:backgroundTint="#FF9800">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtHayvanSayisi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hayvan"
+                        android:textSize="12sp"
+                        android:textColor="#FFF3E0" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Ana Menü Kartları (Grid) -->
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:columnCount="2"
+            app:rowCount="3">
+
+            <!-- Tarlalar Kartı -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTarlalar"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                app:layout_columnWeight="1"
+                app:layout_columnSpan="1"
+                app:layout_rowSpan="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_tarla_bg"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌾"
+                        android:textSize="48sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tarlalar"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#2E7D32" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tarla yönetimi"
+                        android:textSize="12sp"
+                        android:textColor="#66BB6A" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Depolama Kartı -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDepolama"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                app:layout_columnWeight="1"
+                app:layout_columnSpan="1"
+                app:layout_rowSpan="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_depo_bg"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🏠"
+                        android:textSize="48sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Depolama"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#F57C00" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stok takibi"
+                        android:textSize="12sp"
+                        android:textColor="#FFB74D" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Ekonomi Kartı -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEkonomi"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                app:layout_columnWeight="1"
+                app:layout_columnSpan="1"
+                app:layout_rowSpan="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_ekonomi_bg"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="💰"
+                        android:textSize="48sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ekonomi"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#E65100" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Gelir/Gider"
+                        android:textSize="12sp"
+                        android:textColor="#FF9800" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Hayvanlar Kartı -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardHayvanlar"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                app:layout_columnWeight="1"
+                app:layout_columnSpan="1"
+                app:layout_rowSpan="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_hayvan_bg"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🐄"
+                        android:textSize="48sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hayvanlar"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#5D4037" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hayvan takibi"
+                        android:textSize="12sp"
+                        android:textColor="#8D6E63" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Araçlar Kartı -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAraclar"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                app:layout_columnWeight="1"
+                app:layout_columnSpan="1"
+                app:layout_rowSpan="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_arac_bg"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🚜"
+                        android:textSize="48sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Araçlar"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#1565C0" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Araç yönetimi"
+                        android:textSize="12sp"
+                        android:textColor="#42A5F5" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Bilgilerim Kartı -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardBilgilerim"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                app:layout_columnWeight="1"
+                app:layout_columnSpan="1"
+                app:layout_rowSpan="1"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="6dp"
+                android:layout_margin="8dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bilgi_bg"
+                    android:padding="20dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="👤"
+                        android:textSize="48sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bilgilerim"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#6A1B9A" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Profil ayarları"
+                        android:textSize="12sp"
+                        android:textColor="#BA68C8" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </LinearLayout>
+</ScrollView>

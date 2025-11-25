@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ciftci_Projesi_1</string>
+    <string name="app_name">TarlamCepte</string>
     <string-array name="urun_array">
         <item>Arpa</item>
         <item>Buğday</item>
