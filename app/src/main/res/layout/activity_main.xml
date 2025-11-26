@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
-                android:text="🌾 Bereketli olsun"
+                android:text="🌾 Farmery"
                 android:textColor="#FFFFFF"
                 android:textSize="28sp"
                 android:textStyle="bold" />
@@ -41,8 +41,8 @@
 
         <!-- Hızlı İstatistikler -->
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="16dp"
             android:paddingTop="24dp"
@@ -58,8 +58,8 @@
                 android:backgroundTint="#4CAF50">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center">
@@ -92,8 +92,8 @@
                 android:backgroundTint="#FF9800">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="16dp"
                     android:gravity="center">
@@ -119,8 +119,8 @@
 
         <!-- Ana Menü Kartları (Grid) -->
         <androidx.gridlayout.widget.GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
             android:padding="16dp"
             app:columnCount="2"
             app:rowCount="3">
@@ -394,7 +394,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Bilgilerim"
-                        android:textSize="18sp"
+        android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#6A1B9A" />
 

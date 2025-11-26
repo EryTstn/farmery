@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TarlamCepte</string>
+    <string name="app_name">Farmery</string>
     <string-array name="urun_array">
         <item>Arpa</item>
         <item>Buğday</item>

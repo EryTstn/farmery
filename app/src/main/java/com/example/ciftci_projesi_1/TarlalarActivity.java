@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class TarlalarActivity extends AppCompatActivity {
 
-    Button btnTarlaEkle, btnTarlalarim, btnAnasayfa;
+    Button btnTarlaEkle, btnTarlalarim, btnHarita, btnTKGM, btnAnasayfa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,8 @@ public class TarlalarActivity extends AppCompatActivity {
 
         btnTarlaEkle = findViewById(R.id.btnTarlaEkle);
         btnTarlalarim = findViewById(R.id.btnTarlalarim);
+        btnHarita = findViewById(R.id.btnHarita);
+        btnTKGM = findViewById(R.id.btnTKGM);
         btnAnasayfa = findViewById(R.id.btnAnasayfa);
 
         btnTarlaEkle.setOnClickListener(v -> {
@@ -26,7 +28,18 @@ public class TarlalarActivity extends AppCompatActivity {
 
         btnTarlalarim.setOnClickListener(v -> {
             Intent intent = new Intent(TarlalarActivity.this, TarlaListeleActivity.class);
-            startActivity(intent);        });
+            startActivity(intent);
+        });
+
+        btnHarita.setOnClickListener(v -> {
+            Intent haritaIntent = new Intent(TarlalarActivity.this, HaritaActivity.class);
+            startActivity(haritaIntent);
+        });
+
+        btnTKGM.setOnClickListener(v -> {
+            Intent tkgmIntent = new Intent(TarlalarActivity.this, TKGMWebViewActivity.class);
+            startActivity(tkgmIntent);
+        });
 
         btnAnasayfa.setOnClickListener(v -> {
             Intent intent = new Intent(TarlalarActivity.this, MainActivity.class);

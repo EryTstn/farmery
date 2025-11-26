@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class Veritabani extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "CiftciDB.db";
-    public static final int DATABASE_VERSION = 5; // <-- Versiyon artırıldı
+    public static final int DATABASE_VERSION = 6; // <-- Harita özelliği için versiyon artırıldı
 
     // Kullanici tablosu
     public static final String TABLE_KULLANICI = "Kullanici";
@@ -29,6 +29,9 @@ public class Veritabani extends SQLiteOpenHelper {
     public static final String COL_EKIM_TARIHI = "ekim_tarihi";
     public static final String COL_HASAT_TARIHI = "hasat_tarihi";
     public static final String COL_MIKTAR_TON = "miktar_ton";
+    public static final String COL_TARLA_ENLEM = "enlem";
+    public static final String COL_TARLA_BOYLAM = "boylam";
+    public static final String COL_TARLA_POLYGON = "polygon"; // JSON formatında koordinatlar
 
     // Depo tablosu
     public static final String TABLE_DEPO = "Depo";
@@ -70,7 +73,10 @@ public class Veritabani extends SQLiteOpenHelper {
                 COL_TARLA_URUN + " TEXT, " +
                 COL_EKIM_TARIHI + " TEXT, " +
                 COL_HASAT_TARIHI + " TEXT, " +
-                COL_MIKTAR_TON + " REAL)";
+                COL_MIKTAR_TON + " REAL, " +
+                COL_TARLA_ENLEM + " REAL, " +
+                COL_TARLA_BOYLAM + " REAL, " +
+                COL_TARLA_POLYGON + " TEXT)";
         db.execSQL(createTarla);
 
         String createDepo = "CREATE TABLE " + TABLE_DEPO + " (" +
@@ -100,6 +106,65 @@ public class Veritabani extends SQLiteOpenHelper {
 
         kontrolEtVeGerekirseUrunEkle(db);
         kontrolEtVeGerekirseHayvanEkle(db);
+        ornekTarlaVerileriEkle(db);
+    }
+
+    private void ornekTarlaVerileriEkle(SQLiteDatabase db) {
+        // Kayseri Pınarbaşı Mamalık köyü koordinatları: ~38.7°N, 36.4°E
+        // Örnek tarla koordinatları (Mamalık köyü çevresinde)
+        
+        // Tarla 1: Merkez tarla
+        ContentValues tarla1 = new ContentValues();
+        tarla1.put(COL_TARLA_ISIM, "Merkez Tarla");
+        tarla1.put(COL_TARLA_ALAN, 15.5);
+        tarla1.put(COL_TARLA_URUN, "Buğday");
+        tarla1.put(COL_EKIM_TARIHI, "01/10/2024");
+        tarla1.put(COL_HASAT_TARIHI, "15/07/2025");
+        tarla1.put(COL_MIKTAR_TON, 12.5);
+        tarla1.put(COL_TARLA_ENLEM, 38.7123);
+        tarla1.put(COL_TARLA_BOYLAM, 36.4123);
+        // Polygon: Dikdörtgen alan (4 köşe)
+        tarla1.put(COL_TARLA_POLYGON, "38.7123,36.4123|38.7130,36.4123|38.7130,36.4130|38.7123,36.4130");
+        db.insert(TABLE_TARLA, null, tarla1);
+
+        // Tarla 2: Kuzey tarla
+        ContentValues tarla2 = new ContentValues();
+        tarla2.put(COL_TARLA_ISIM, "Kuzey Tarla");
+        tarla2.put(COL_TARLA_ALAN, 22.0);
+        tarla2.put(COL_TARLA_URUN, "Arpa");
+        tarla2.put(COL_EKIM_TARIHI, "15/09/2024");
+        tarla2.put(COL_HASAT_TARIHI, "20/06/2025");
+        tarla2.put(COL_MIKTAR_TON, 18.0);
+        tarla2.put(COL_TARLA_ENLEM, 38.7150);
+        tarla2.put(COL_TARLA_BOYLAM, 36.4100);
+        tarla2.put(COL_TARLA_POLYGON, "38.7150,36.4100|38.7160,36.4100|38.7160,36.4110|38.7150,36.4110");
+        db.insert(TABLE_TARLA, null, tarla2);
+
+        // Tarla 3: Güney tarla
+        ContentValues tarla3 = new ContentValues();
+        tarla3.put(COL_TARLA_ISIM, "Güney Tarla");
+        tarla3.put(COL_TARLA_ALAN, 18.5);
+        tarla3.put(COL_TARLA_URUN, "Mısır");
+        tarla3.put(COL_EKIM_TARIHI, "01/05/2024");
+        tarla3.put(COL_HASAT_TARIHI, "15/09/2024");
+        tarla3.put(COL_MIKTAR_TON, 25.0);
+        tarla3.put(COL_TARLA_ENLEM, 38.7100);
+        tarla3.put(COL_TARLA_BOYLAM, 36.4140);
+        tarla3.put(COL_TARLA_POLYGON, "38.7100,36.4140|38.7110,36.4140|38.7110,36.4150|38.7100,36.4150");
+        db.insert(TABLE_TARLA, null, tarla3);
+
+        // Tarla 4: Doğu tarla
+        ContentValues tarla4 = new ContentValues();
+        tarla4.put(COL_TARLA_ISIM, "Doğu Tarla");
+        tarla4.put(COL_TARLA_ALAN, 12.0);
+        tarla4.put(COL_TARLA_URUN, "Pancar");
+        tarla4.put(COL_EKIM_TARIHI, "10/04/2024");
+        tarla4.put(COL_HASAT_TARIHI, "30/10/2024");
+        tarla4.put(COL_MIKTAR_TON, 30.0);
+        tarla4.put(COL_TARLA_ENLEM, 38.7135);
+        tarla4.put(COL_TARLA_BOYLAM, 36.4150);
+        tarla4.put(COL_TARLA_POLYGON, "38.7135,36.4150|38.7140,36.4150|38.7140,36.4155|38.7135,36.4155");
+        db.insert(TABLE_TARLA, null, tarla4);
     }
 
     public void kontrolEtVeGerekirseUrunEkle(SQLiteDatabase db) {
@@ -245,11 +310,25 @@ public class Veritabani extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_KULLANICI);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TARLA);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_DEPO);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_GELIRGIDER);
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_HAYVAN); // 👈 Bu satır EKLENDİ!
-        onCreate(db);
+        if (oldVersion < 6) {
+            // Harita özelliği için koordinat kolonlarını ekle
+            try {
+                db.execSQL("ALTER TABLE " + TABLE_TARLA + " ADD COLUMN " + COL_TARLA_ENLEM + " REAL");
+                db.execSQL("ALTER TABLE " + TABLE_TARLA + " ADD COLUMN " + COL_TARLA_BOYLAM + " REAL");
+                db.execSQL("ALTER TABLE " + TABLE_TARLA + " ADD COLUMN " + COL_TARLA_POLYGON + " TEXT");
+                // Örnek tarla verilerini ekle
+                ornekTarlaVerileriEkle(db);
+            } catch (Exception e) {
+                // Kolonlar zaten varsa hata verme
+            }
+        }
+        if (oldVersion < 5) {
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_KULLANICI);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_TARLA);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_DEPO);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_GELIRGIDER);
+            db.execSQL("DROP TABLE IF EXISTS " + TABLE_HAYVAN);
+            onCreate(db);
+        }
     }
 }

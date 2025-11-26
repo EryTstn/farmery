@@ -29,6 +29,28 @@
         android:textSize="18sp" />
 
     <Button
+        android:id="@+id/btnHarita"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🗺️ Haritada Göster"
+        android:layout_below="@id/btnTarlalarim"
+        android:layout_margin="16dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnTKGM"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📋 TKGM Parsel Sorgu"
+        android:layout_below="@id/btnHarita"
+        android:layout_margin="16dp"
+        android:backgroundTint="#2196F3"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp" />
+
+    <Button
         android:id="@+id/btnAnasayfa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
